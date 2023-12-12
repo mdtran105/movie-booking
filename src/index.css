@@ -24,8 +24,16 @@
 .container {
   color: white;
   padding-top: 69px;
+  position: relative;
 }
 
+.seats h1 {
+  color: orange;
+}
+
+td input {
+  background-color: orange;
+}
 
 .ghe {
   border: 3px solid orange;
@@ -35,6 +43,18 @@
   margin-left: 2%;
   margin-bottom: 1%;
   border-radius: 5px;
+}
+
+.cart h1 {
+  font-size: 1.3rem;
+}
+
+td {
+  font-weight: 600;
+  font-size: 1em;
+  padding-top: 7px;
+  height: 24px;
+  color: #fff;
 }
 
 .rowNumber {
@@ -58,11 +78,9 @@
 }
 
 .screen {
-  border-bottom: 50px solid rgb(255, 159, 95);
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  height: 100px;
-  /* width: 80%; */
+  border-bottom: 30px solid rgb(255, 159, 95);
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
   filter: drop-shadow(4px 30px 20px rgba(255, 255, 255, 0.5));
   font-size: 25px;
   color: #fff;

@@ -166,19 +166,19 @@ let initialState = {
       ]
     }
 
-  ]
+  ],
+  cart: [],
 };
 
 let seatSlice = createSlice({
   name: "seatSlice",
   initialState,
   reducers: {
-    //viet logic
-    setDetail: (state, action) => {
-      state.detail = action.payload;
+    addCart: (state, action) => {
+      state.cart.push(action.payload);
     }
   }
 });
 
 export default seatSlice.reducer;
-export let { setDetail } = seatSlice.actions;
+export let { addCart } = seatSlice.actions;
