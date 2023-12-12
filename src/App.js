@@ -1,4 +1,5 @@
-import Booking from './pages/Booking';
+import Booking from "./pages/Booking";
+
 
 function App() {
   return (

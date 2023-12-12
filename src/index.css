@@ -3,8 +3,27 @@
   src: url('./assets/Pony.ttf');
 }
 
-.bookingMovie {
+.App {
   font-family: 'fontGame';
+  background-image: url(../src/assets/bgmovie.jpg);
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  z-index: -1;
+}
+
+.App::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(4, 4, 4, 0.546);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+.container {
+  color: white;
+  padding-top: 69px;
 }
 
 
@@ -42,8 +61,8 @@
   border-bottom: 50px solid rgb(255, 159, 95);
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
-  height: 100;
-  width: 80%;
+  height: 100px;
+  /* width: 80%; */
   filter: drop-shadow(4px 30px 20px rgba(255, 255, 255, 0.5));
   font-size: 25px;
   color: #fff;
