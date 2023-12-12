@@ -1,6 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 export default function Cart() {
+  let data = useSelector(state => state.seatSlice.cart)
+  let renderCart = () => {
+    return data.map(ticket => {
+      return <tr key={ticket.soGhe}>
+        <td>{ticket.soGhe}</td>
+        <td>đ {ticket.gia.toLocaleString()}</td>
+        <td><button className='btn text-danger'>X</button></td>
+      </tr>
+    })
+  }
   return (
     <div className="col-4 cart">
       <h1>DANH SÁCH GHẾ BẠN CHỌN</h1>
@@ -13,11 +24,7 @@ export default function Cart() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>A2</td>
-            <td>30.000</td>
-            <td><button className='btn text-danger'>X</button></td>
-          </tr>
+          {renderCart()}
         </tbody>
       </table>
     </div>

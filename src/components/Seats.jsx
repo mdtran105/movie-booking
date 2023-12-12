@@ -1,15 +1,21 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCart } from './seatSlice';
 
 export default function Seats() {
-
+  let dispatch = useDispatch()
+  let handleAddCart = (seat) => {
+    dispatch(addCart(seat))
+  }
   let seatList = useSelector((state) => state.seatSlice.seatArr);
   let renderSeatList = () => {
     return seatList.map(seat => {
       return <tr key={seat.hang}>
         <td>{seat.hang}</td>
         {seat.danhSachGhe.map(item => <td>
-          <input type="checkbox" className="ghe" defaultValue={item.soGhe} disabled={item.daDat && 'disabled'} />
+          <input onClick={() => handleAddCart(item)}
+          type="checkbox" className="ghe" 
+          value={item.soGhe} disabled={item.daDat && 'disabled'} />
         </td>)}
       </tr>;
     });
