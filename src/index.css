@@ -5,6 +5,7 @@
 
 .App {
   font-family: 'fontGame';
+  letter-spacing: 2px;
   background: linear-gradient(0deg, rgba(14, 14, 14, 0.9204014369419643) 0%, rgba(65, 65, 70, 0.7495330896030288) 50%, rgba(5, 5, 5, 0.9400092800792192) 100%), url(../src/assets/bgmovie.jpg);
   ;
   background-size: cover;
@@ -56,6 +57,19 @@ td {
   padding-top: 7px;
   height: 24px;
   color: #fff;
+}
+
+.tableCart {
+  width: 400px;
+}
+
+.tableCart,
+.tableCart * {
+  background-color: transparent !important;
+}
+
+.cart td {
+  color: orange;
 }
 
 .rowNumber {
