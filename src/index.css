@@ -5,14 +5,14 @@
 
 .App {
   font-family: 'fontGame';
-  background-image: url(../src/assets/bgmovie.jpg);
+  background: linear-gradient(0deg, rgba(14, 14, 14, 0.9204014369419643) 0%, rgba(65, 65, 70, 0.7495330896030288) 50%, rgba(5, 5, 5, 0.9400092800792192) 100%), url(../src/assets/bgmovie.jpg);
+  ;
   background-size: cover;
   height: 100vh;
   position: relative;
-  z-index: -1;
 }
 
-.App::before {
+.App::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -36,13 +36,14 @@ td input {
 }
 
 .ghe {
-  border: 3px solid orange;
-  width: 45px;
+  outline: 3px solid orange;
+  width: 35px;
   height: 35px;
   font-size: 12px;
   margin-left: 2%;
   margin-bottom: 1%;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .cart h1 {
