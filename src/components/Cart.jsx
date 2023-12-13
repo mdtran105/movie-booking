@@ -1,14 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeTicket } from './seatSlice';
 
 export default function Cart() {
+  let dispatch = useDispatch();
+  let handleRemoveBtn = (seat) => {
+    dispatch(removeTicket(seat));
+  }
   let data = useSelector(state => state.seatSlice.cart)
   let renderCart = () => {
     return data.map(ticket => {
       return <tr key={ticket.soGhe}>
         <td>{ticket.soGhe}</td>
         <td>đ {ticket.gia.toLocaleString()}</td>
-        <td><button className='btn text-danger'>X</button></td>
+        <td><button onClick={() => handleRemoveBtn(ticket.soGhe)} className='btn text-danger'>X</button></td>
       </tr>
     })
   }

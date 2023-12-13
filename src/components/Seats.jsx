@@ -3,19 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from './seatSlice';
 
 export default function Seats() {
-  let dispatch = useDispatch()
+  let dispatch = useDispatch();
   let handleAddCart = (seat) => {
-    dispatch(addCart(seat))
-  }
+    dispatch(addCart(seat));
+  };
   let seatList = useSelector((state) => state.seatSlice.seatArr);
   let renderSeatList = () => {
     return seatList.map(seat => {
       return <tr key={seat.hang}>
         <td>{seat.hang}</td>
-        {seat.danhSachGhe.map(item => <td>
-          <input onChange={() => handleAddCart(item)}
-          type="checkbox" className="ghe" 
-          value={item.soGhe} disabled={item.daDat && 'disabled'} />
+        {seat.danhSachGhe.map(item => <td key={item.soGhe}>
+          <input onChange={(e) => handleAddCart([e.target.checked, item])}
+            type="checkbox" className="ghe"
+            value={item.soGhe} disabled={item.daDat && 'disabled'} />
         </td>)}
       </tr>;
     });

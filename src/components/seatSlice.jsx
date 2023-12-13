@@ -175,15 +175,18 @@ let seatSlice = createSlice({
   initialState,
   reducers: {
     addCart: (state, action) => {
-      const alreadyHad = state.cart.find(seat => seat.soGhe === action.payload.soGhe);
+      const alreadyHad = !action.payload[0];
       if (alreadyHad) {
-        state.cart = state.cart.filter(seat => seat.soGhe !== action.payload.soGhe);
+        state.cart = state.cart.filter(seat => seat.soGhe !== action.payload[1].soGhe);
       } else {
-        state.cart.push(action.payload);
+        state.cart.push(action.payload[1]);
       }
+    },
+    removeTicket: (state, action) => {
+      state.cart = state.cart.filter(seat => seat.soGhe !== action.payload)
     }
   }
 });
 
 export default seatSlice.reducer;
-export let { addCart } = seatSlice.actions;
+export let { addCart, removeTicket } = seatSlice.actions;
