@@ -175,7 +175,12 @@ let seatSlice = createSlice({
   initialState,
   reducers: {
     addCart: (state, action) => {
-      state.cart.push(action.payload);
+      const alreadyHad = state.cart.find(seat => seat.soGhe === action.payload.soGhe);
+      if (alreadyHad) {
+        state.cart = state.cart.filter(seat => seat.soGhe !== action.payload.soGhe);
+      } else {
+        state.cart.push(action.payload);
+      }
     }
   }
 });

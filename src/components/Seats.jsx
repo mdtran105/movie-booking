@@ -13,7 +13,7 @@ export default function Seats() {
       return <tr key={seat.hang}>
         <td>{seat.hang}</td>
         {seat.danhSachGhe.map(item => <td>
-          <input onClick={() => handleAddCart(item)}
+          <input onChange={() => handleAddCart(item)}
           type="checkbox" className="ghe" 
           value={item.soGhe} disabled={item.daDat && 'disabled'} />
         </td>)}
